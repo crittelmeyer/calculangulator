@@ -18,31 +18,31 @@ describe('app', () => {
       // do we really need to test private helpers since they should be covered by other tests? perhaps not
       // but just in case... here we are!
       it('should update "last" values properly', () => {
-        expect(ctrl.lastValue).toBe(null)
-        expect(ctrl.lastOperation).toBe(null)
+        expect(ctrl.lastValue).toBeNull
+        expect(ctrl.lastOperation).toBeNull
         ctrl._updateLast('1', '+')
         expect(ctrl.lastValue).toBe('1')
         expect(ctrl.lastOperation).toBe('+')
         ctrl._updateLast('2')
         expect(ctrl.lastValue).toBe('2')
-        expect(ctrl.lastOperation).toBe(null)
+        expect(ctrl.lastOperation).toBeNull
         ctrl._updateLast()
-        expect(ctrl.lastValue).toBe(null)
-        expect(ctrl.lastOperation).toBe(null)
+        expect(ctrl.lastValue).toBeNull
+        expect(ctrl.lastOperation).toBeNull
       })
 
       it('should update "pending" values properly', () => {
-        expect(ctrl.pendingValue).toBe(null)
-        expect(ctrl.pendingOperation).toBe(null)
+        expect(ctrl.pendingValue).toBeNull
+        expect(ctrl.pendingOperation).toBeNull
         ctrl._updatePending('1', '+')
         expect(ctrl.pendingValue).toBe('1')
         expect(ctrl.pendingOperation).toBe('+')
         ctrl._updatePending('2')
         expect(ctrl.pendingValue).toBe('2')
-        expect(ctrl.pendingOperation).toBe(null)
+        expect(ctrl.pendingOperation).toBeNull
         ctrl._updatePending()
-        expect(ctrl.pendingValue).toBe(null)
-        expect(ctrl.pendingOperation).toBe(null)
+        expect(ctrl.pendingValue).toBeNull
+        expect(ctrl.pendingOperation).toBeNull
       })
 
       it('should calculate values properly', () => {
@@ -54,11 +54,11 @@ describe('app', () => {
     })
 
     it('should start with the default state', () => {
-      expect(ctrl.lastValue).toBe(null)
-      expect(ctrl.lastOperation).toBe(null)
+      expect(ctrl.lastValue).toBeNull
+      expect(ctrl.lastOperation).toBeNull
       expect(ctrl.currentValue).toBe('0')
-      expect(ctrl.pendingValue).toBe(null)
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingValue).toBeNull
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.justSelectedOperator).toBe(false)
       expect(ctrl.justUpdatedTotal).toBe(false)
     })
@@ -131,7 +131,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('3')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('3')
       expect(ctrl.lastValue).toBe('2')
       expect(ctrl.lastOperation).toBe('+')
@@ -181,7 +181,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('7')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('7')
       expect(ctrl.lastValue).toBe('4')
       expect(ctrl.lastOperation).toBe('+')
@@ -205,7 +205,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('9')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('9')
       expect(ctrl.lastValue).toBe('1')
       expect(ctrl.lastOperation).toBe('-')
@@ -254,7 +254,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('7')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('7')
       expect(ctrl.lastValue).toBe('2')
       expect(ctrl.lastOperation).toBe('-')
@@ -277,7 +277,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('6')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('6')
       expect(ctrl.lastValue).toBe('3')
       expect(ctrl.lastOperation).toBe('*')
@@ -325,7 +325,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('24')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('24')
       expect(ctrl.lastValue).toBe('4')
       expect(ctrl.lastOperation).toBe('*')
@@ -349,7 +349,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('6')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('6')
       expect(ctrl.lastValue).toBe('3')
       expect(ctrl.lastOperation).toBe('/')
@@ -397,7 +397,7 @@ describe('app', () => {
 
       ctrl.calculateTotal()
       expect(ctrl.currentValue).toBe('3')
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.pendingValue).toBe('3')
       expect(ctrl.lastValue).toBe('2')
       expect(ctrl.lastOperation).toBe('/')
@@ -452,11 +452,11 @@ describe('app', () => {
       ctrl.enterValue('1')
       expect(ctrl.currentValue).toBe('1')
       ctrl.clear()
-      expect(ctrl.lastValue).toBe(null)
-      expect(ctrl.lastOperation).toBe(null)
+      expect(ctrl.lastValue).toBeNull
+      expect(ctrl.lastOperation).toBeNull
       expect(ctrl.currentValue).toBe('0')
-      expect(ctrl.pendingValue).toBe(null)
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingValue).toBeNull
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.justSelectedOperator).toBe(false)
       expect(ctrl.justUpdatedTotal).toBe(false)
 
@@ -465,11 +465,11 @@ describe('app', () => {
       ctrl.enterValue('0')
       expect(ctrl.currentValue).toBe('100')
       ctrl.clear()
-      expect(ctrl.lastValue).toBe(null)
-      expect(ctrl.lastOperation).toBe(null)
+      expect(ctrl.lastValue).toBeNull
+      expect(ctrl.lastOperation).toBeNull
       expect(ctrl.currentValue).toBe('0')
-      expect(ctrl.pendingValue).toBe(null)
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingValue).toBeNull
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.justSelectedOperator).toBe(false)
       expect(ctrl.justUpdatedTotal).toBe(false)
 
@@ -480,11 +480,11 @@ describe('app', () => {
       ctrl.enterValue('5')
       expect(ctrl.currentValue).toBe('12345')
       ctrl.clear()
-      expect(ctrl.lastValue).toBe(null)
-      expect(ctrl.lastOperation).toBe(null)
+      expect(ctrl.lastValue).toBeNull
+      expect(ctrl.lastOperation).toBeNull
       expect(ctrl.currentValue).toBe('0')
-      expect(ctrl.pendingValue).toBe(null)
-      expect(ctrl.pendingOperation).toBe(null)
+      expect(ctrl.pendingValue).toBeNull
+      expect(ctrl.pendingOperation).toBeNull
       expect(ctrl.justSelectedOperator).toBe(false)
       expect(ctrl.justUpdatedTotal).toBe(false)
 
@@ -532,14 +532,14 @@ describe('app', () => {
       ctrl.enterOperator('/')
       ctrl.enterValue('0')
       ctrl.calculateTotal()
-      expect(ctrl.currentValue).toBe('NaN')
+      expect(ctrl.currentValue).toBeNaN
 
       ctrl.enterValue('5')
       ctrl.enterValue('6')
       ctrl.enterOperator('/')
       ctrl.enterValue('0')
       ctrl.calculateTotal()
-      expect(ctrl.currentValue).toBe('NaN')
+      expect(ctrl.currentValue).toBeNaN
     })
   })
 })

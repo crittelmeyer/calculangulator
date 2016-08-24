@@ -110,11 +110,15 @@ class AppCtrl {
         break
     }
 
-    // eh, a little awkward, but simple enough
-    // toFixed gives us the precision we want, but also pads with zeroes
-    // parseFloat gets rid of the zeroes
-    // toString turns it back into a string
-    return parseFloat(result.toFixed(PRECISION)).toString()
+    if (isFinite(result)) {
+      // eh, this line is a little awkward, but simple enough
+      // toFixed gives us the precision we want, but also pads with zeroes
+      // parseFloat gets rid of the zeroes
+      // toString turns it back into a string
+      return parseFloat(result.toFixed(PRECISION)).toString()
+    } else {
+      return NaN
+    }
   }
 }
 
