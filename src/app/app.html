@@ -1,33 +1,35 @@
 <main>
   <h1 class="title">The Calculangulator</h1>
-  <header>
-    <h2>{{ app.currentValue }}</h2>
-    <button>clear</button>
-  </header>
-  <section class="grid">
-    <div class="row">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>&#xF7;</button>
-    </div>
-    <div class="row">
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>&times;</button>
-    </div>
-    <div class="row">
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>-</button>
-    </div>
-    <div class="row">
-      <button>0</button>
-      <button>.</button>
-      <button>=</button>
-      <button>+</button>
-    </div>
-  </section>
+  <div class="container">
+    <header>
+      <h2>{{ app.currentValue }}</h2>
+      <button class="pure-button" ng-click="app.clear()">C</button>
+    </header>
+    <section class="grid">
+      <div class="row">
+        <button class="pure-button" ng-click="app.enterValue('1')">1</button>
+        <button class="pure-button" ng-click="app.enterValue('2')">2</button>
+        <button class="pure-button" ng-click="app.enterValue('3')">3</button>
+        <button class="pure-button operator" ng-click="app.enterOperator('/')">&#xF7;</button>
+      </div>
+      <div class="row">
+        <button class="pure-button" ng-click="app.enterValue('4')">4</button>
+        <button class="pure-button" ng-click="app.enterValue('5')">5</button>
+        <button class="pure-button" ng-click="app.enterValue('6')">6</button>
+        <button class="pure-button operator" ng-click="app.enterOperator('*')">&times;</button>
+      </div>
+      <div class="row">
+        <button class="pure-button" ng-click="app.enterValue('7')">7</button>
+        <button class="pure-button" ng-click="app.enterValue('8')">8</button>
+        <button class="pure-button" ng-click="app.enterValue('9')">9</button>
+        <button class="pure-button operator" ng-click="app.enterOperator('-')">-</button>
+      </div>
+      <div class="row">
+        <button class="pure-button" ng-click="app.enterValue('0')">0</button>
+        <button class="pure-button" ng-click="app.enterDecimal()">.</button>
+        <button class="pure-button equals" ng-click="app.calculateTotal()">=</button>
+        <button class="pure-button operator" ng-click="app.enterOperator('+')">+</button>
+      </div>
+    </section>
+  </div>
 </main>

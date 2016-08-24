@@ -1,34 +1,63 @@
-/* styles in src/style directory are applied to the whole page */
 body {
+  color: #505050;
+}
+
+button.pure-button {
+  font-size: 22px;
+  width: 60px;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
 }
 
 h1 {
+  font-size: 24px;
+}
 
+div.container {
+  height: 300px;
+  width: 280px;
 }
 
 header {
-
+  display: flex;
 }
 
-button {
-  font-size: 18px;
-  cursor: pointer;
+header h2 {
+  background-color: #fff5c3;
+  border: solid lightgrey 1px;
+  flex: 1;
+  font-size: 34px;
+  margin: 0 13px 0 0;
+  padding: 6px;
+  text-align: right;
 }
 
-section.grid {
-  width: 200px;
+header button.pure-button {
+  background-color: white;
+  border: solid lightgrey 1px;
 }
 
 section.grid .row {
   display: flex;
+  justify-content: space-between;
 }
 
 section.grid .row button {
-  flex: 1;
+  flex: 0 1 60px;
+  margin-top: 10px;
 }
 
-main {
+button.equals {
+  background-color: #8a8a8a;
+  color: white;
 }
 
-footer {
+button.operator {
+  background-color: #cecece;
 }
