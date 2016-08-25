@@ -1,8 +1,12 @@
+/* NOTE: typically I would use scss and store color and size values in variables, as well as css modules, */
+/* especially for larger projects. I also tend to avoid targeting elements directly with my styles, button */
+/* with a narrow-focus SPA like this one, it's unlikely to cause any problems. */
+
 body {
   color: #505050;
 }
 
-button.pure-button {
+.pure-button {
   font-size: 22px;
   width: 60px;
 }
@@ -19,7 +23,7 @@ h1 {
   font-size: 24px;
 }
 
-div.container {
+.container {
   height: 300px;
   width: 280px;
 }
@@ -34,30 +38,30 @@ header h2 {
   flex: 1;
   font-size: 34px;
   margin: 0 13px 0 0;
-  padding: 6px;
+  padding: 6px 9px;
   text-align: right;
 }
 
-header button.pure-button {
+header .pure-button {
   background-color: white;
   border: solid lightgrey 1px;
 }
 
-section.grid .row {
+.grid .row {
   display: flex;
   justify-content: space-between;
 }
 
-section.grid .row button {
+.grid .row button {
   flex: 0 1 60px;
   margin-top: 10px;
 }
 
-button.equals {
+.equals {
   background-color: #8a8a8a;
   color: white;
 }
 
-button.operator {
+.operator {
   background-color: #cecece;
 }
